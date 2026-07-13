@@ -85,13 +85,16 @@ print(df)
 
 #Data transformation
 
-from sklearn.preproccessing import standardScaler, MinMaxScaler 
+from sklearn.preprocessing import StandardScaler, MinMaxScaler
+
+# Min-Max Normalization
 scaler_minmax = MinMaxScaler()
-df['Atendance_Normalized'] = scaler_minmax.fit_transform(df[['Attendance']])
+df['Attendance_Normalized'] = scaler_minmax.fit_transform(df[['Attendance']])
+
 print(df)
 
-
-# 
+# Standardization
 scaler_std = StandardScaler()
-df['Salary_Standardizwd'] = scaler_std.fit_transform(df[['Salary']])
+df['Salary_Standardized'] = scaler_std.fit_transform(df[['Salary']])
+
 print(df)
