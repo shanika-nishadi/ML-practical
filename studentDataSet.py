@@ -98,3 +98,20 @@ scaler_std = StandardScaler()
 df['Salary_Standardized'] = scaler_std.fit_transform(df[['Salary']])
 
 print(df)
+
+#label encoding
+
+ le = LabelEncoder()
+df['Department'] = le.fit_transform(df['Department'])
+print(df)
+
+# #method B - One-hot Encoding for Nominal data (Gender and city)
+
+df = pd.get_dummies(df, columns=['Gender'], dtype=int)
+print("\n--- 6. After Categerical Encoding ---")
+print(df.info())
+
+# save cleaned data set
+ df.to_csv('C:/Users/dcsuser/Desktop/shanika/student_data_cleaned (1).csv')
+print("\n cleaned dataset saved\n")
+
